@@ -38,7 +38,7 @@ const resetButton = document.querySelector('#reset')
 console.log(boxes)
 
 
-let gameState = ['x', 'x', 'x', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
+let gameState = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
 let side2card = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
 let counter = 0
 //console.log(gameState.length)
@@ -47,5 +47,22 @@ resetButton.addEventListener("click", resetGame);
 function resetGame() {
     gameState = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
     counter = 0
+
+    function boxEventListener() {
+        gamestate["#id0"] = "X";
+        counter++
+        winLogic();
+        console.log(gameState);
+
+        this.innerHTML = currentPlayer;
+
+        if (currentPlayer === "X") {
+            currentPlayer = "O";
+        } else {
+            currentPlayer = "X";
+        }
+
+    
+}    
 }
 
