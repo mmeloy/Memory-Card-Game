@@ -32,37 +32,45 @@
 //add CSS3 flip card animation
 
 //allow for 2 players with alternating turns  
-const boxes = document.querySelectorAll('.box');
+const memcards = document.querySelectorAll('.cards')
+console.log(memcards)
 const resetButton = document.querySelector('#reset')
+const front = document.querySelector('.front')
+const back = document.querySelector('.back')
+// console.log(boxes)
 
-console.log(boxes)
+console.log(front)
+console.log(back)
+function flip() {
+    $('.card').toggleClass('flipped');
+}
 
-
-let gameState = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
-let side2card = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
+// let gameState = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
+// let side2card = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
 let counter = 0
 //console.log(gameState.length)
-resetButton.addEventListener("click", resetGame);
+// resetButton.addEventListener("click", resetGame);
 
-function resetGame() {
-    gameState = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
-    counter = 0
+// function resetGame() {
+    // gameState = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
+    // counter = 0
 
-    function boxEventListener() {
-        gamestate["#id0"] = "X";
-        counter++
-        winLogic();
-        console.log(gameState);
+    // function boxEventListener() {
+    //     gamestate[this.id] = currentPlayer;
+    //     counter++
+    //     winLogic();
+    //     console.log(gameState);
 
-        this.innerHTML = currentPlayer;
+    //     this.innerHTML = currentPlayer;
 
-        if (currentPlayer === "X") {
-            currentPlayer = "O";
-        } else {
-            currentPlayer = "X";
-        }
+    //     if (currentPlayer === "X") {
+    //         currentPlayer = "O";
+    //     } else {
+    //         currentPlayer = "X";
+    //     }
 
+       //function snippet from:  https://jsfiddle.net/james2doyle/qsQun/
     
-}    
-}
+
+
 
