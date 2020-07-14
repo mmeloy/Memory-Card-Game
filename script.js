@@ -35,14 +35,41 @@
 const memcards = document.querySelectorAll('.cards')
 console.log(memcards)
 const resetButton = document.querySelector('#reset')
-const front = document.querySelector('.front')
-const back = document.querySelector('.back')
+const front = document.querySelectorAll('.front')
+const back = document.querySelectorAll('.back')
 // console.log(boxes)
 
 console.log(front)
 console.log(back)
+
+
+let firstC, secondC;
+let cardFlipped = false;
+let freeze = false;
+
+
 function flip() {
-    $('.card').toggleClass('flipped');
+    if (freeze) return;
+    if (this === firstC) return;
+
+    this.classList.add('flip');
+
+    if (!cardFlipped) {
+        cardFlipped = true;
+        firstC = this;
+
+        return;
+
+    
+
+        (function shuffle() {
+            cards.forEach(card => {
+                let randomPos = Math.floor(Math.random() * 20);
+                card.style.order = randomPos;
+            });
+        })();
+
+    }
 }
 
 // let gameState = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
@@ -71,6 +98,3 @@ let counter = 0
 
        //function snippet from:  https://jsfiddle.net/james2doyle/qsQun/
     
-
-
-
