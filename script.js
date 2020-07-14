@@ -31,8 +31,40 @@
 //successfully solving all matches reveals a picture, saying. etc on background behind cards
 //add CSS3 flip card animation
 
-//allow for 2 players with alternating turns  
+//allow for 2 players with alternating turns 
+
+let counter = 0
+let playermoves = [];
+
 const memcards = document.querySelectorAll('.cards')
+function clickCard() {
+    counter++
+    playermoves.push(this.getAttribute("data-image"))
+    this.lastElementChild.classList.add('hideHerky');
+    console.log(playermoves);
+    if (playermoves.length == 2 && playermoves[0] === playermoves[1])
+    {
+        console.log("found match")
+        this.removeEventListener("click", clickCard);
+        playermoves = [];
+
+    } 
+
+} 
+
+
+function addListenerToCards() {
+    for (let i = 0; i < memcards.length; i++) {
+        let card = memcards[i] 
+        card.addEventListener("click", clickCard)
+        
+    }
+
+}
+addListenerToCards();
+
+
+
 console.log(memcards)
 const resetButton = document.querySelector('#reset')
 const front = document.querySelectorAll('.front')
@@ -62,19 +94,20 @@ function flip() {
 
     
 
-        (function shuffle() {
-            cards.forEach(card => {
-                let randomPos = Math.floor(Math.random() * 20);
-                card.style.order = randomPos;
-            });
-        })();
-
     }
 }
+(function shuffle() {
+    memcards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 20);
+        card.style.order = randomPos;
+    });
+})();
+
+
 
 // let gameState = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
 // let side2card = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
-let counter = 0
+
 //console.log(gameState.length)
 // resetButton.addEventListener("click", resetGame);
 
