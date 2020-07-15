@@ -53,6 +53,7 @@ function clickCard() {
 
     } else if (playermoves.length == 2) {
         
+        setTimeout(unClickCards(), 3000); 
         console.log("unClickCards")
         unClickCards();
         
@@ -66,6 +67,12 @@ function clickCard() {
 
 
 }
+// setTimeout(unClickCards('', 1500))
+
+
+
+
+
 function unClickCards() {
     
     
