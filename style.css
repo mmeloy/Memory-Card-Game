@@ -3,16 +3,20 @@
     margin: 0;
     box-sizing: border-box;
 
+    
 }
+.game-title {
+    position: relative
+    
+    
 
+}
 
 body {
     height: 100%;
     background-color: goldenrod;
     display: flex;
 }
-
-
 /* .message-div {
     align-items: center;
     margin: 20px;
@@ -21,8 +25,8 @@ body {
 } */
 
 .cards {
-    width: calc(20% - 5px);
-    height: calc(25% - 5px);
+    width: calc(20% - 2px);
+    height: calc(25% - 2px);
     transform: scale(1);
     transform-style: preserve-3d;
     position: relative;
@@ -37,11 +41,11 @@ body {
     /* grid-template-columns: repeat(5, auto);
     grid-template-rows: repeat(4, auto); */
     }
-
+/* 
 .flip {
 transform: rotateY(180deg);
 
-}
+} */
 .front,
 .back {
     width: 100%;
@@ -51,13 +55,15 @@ transform: rotateY(180deg);
     /* backface-visibility: hidden; */
 
 }
-.front{
+/* .front{
     transform: rotateY(180deg);
-}
+} */
 .hideHerky{
     display:none;
 }
-
+.showHerky{
+    display:block;
+}
 
 /* .box {
     font-family: "Permanent Marker", cursive;

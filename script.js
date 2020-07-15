@@ -35,22 +35,45 @@
 
 let counter = 0
 let playermoves = [];
-
+let playerMoveElements = [];
+document.querySelector("title");
 const memcards = document.querySelectorAll('.cards')
 function clickCard() {
-    counter++
+    // counter++
     playermoves.push(this.getAttribute("data-image"))
     this.lastElementChild.classList.add('hideHerky');
-    console.log(playermoves);
-    if (playermoves.length == 2 && playermoves[0] === playermoves[1])
-    {
+    
+    playerMoveElements.push(this.lastElementChild);
+    console.log(playermoves, playerMoveElements);
+    if (playermoves.length == 2 && playermoves[0] === playermoves[1]) {
         console.log("found match")
         this.removeEventListener("click", clickCard);
         playermoves = [];
+        playerMoveElements = [];
 
-    } 
+    } else if (playermoves.length == 2) {
+        
+        console.log("unClickCards")
+        unClickCards();
+        
+    } else {
+        return;
 
-} 
+    }
+            
+            
+        
+
+
+}
+function unClickCards() {
+    
+    
+        playerMoveElements[0].classList.remove('hideHerky');
+        playerMoveElements[1].classList.remove('hideHerky');
+        playerMoveElements = [];
+        playermoves = [];
+    }
 
 
 function addListenerToCards() {
@@ -66,18 +89,18 @@ addListenerToCards();
 
 
 console.log(memcards)
-const resetButton = document.querySelector('#reset')
-const front = document.querySelectorAll('.front')
-const back = document.querySelectorAll('.back')
+// const resetButton = document.querySelector('#reset')
+// const front = document.querySelectorAll('.front')
+// const back = document.querySelectorAll('.back')
 // console.log(boxes)
 
-console.log(front)
-console.log(back)
+// console.log(front)
+// console.log(back)
 
 
-let firstC, secondC;
-let cardFlipped = false;
-let freeze = false;
+// let firstC, secondC;
+// let cardFlipped = false;
+// let freeze = false;
 
 
 function flip() {
