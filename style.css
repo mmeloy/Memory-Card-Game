@@ -5,6 +5,11 @@
 
     
 }
+header {
+    font-display: large;
+    display: inline-flexbox;
+    
+}
 h1 {
     display: block;
   font-size: 2em;
@@ -15,6 +20,9 @@ h1 {
   font-weight: bold;
     
 
+}
+h3 {
+    font-size: small;
 }
 
 body {
@@ -68,6 +76,9 @@ transform: rotateY(180deg);
 }
 .showHerky{
     display:block;
+}
+footer {
+    font-size: x-small;
 }
 
 /* .box {
