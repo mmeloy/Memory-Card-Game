@@ -22,15 +22,15 @@ Browser Screenshot:
 
 * List of Features / User Stories
 Bronze
-As a user I should be able to restart the game
-As a user the game should present a new random order of shuffled cards
+-	As a user I should be able to restart the game
+-	As a user the game should present a new random order of shuffled cards
 Silver
-turns counter logs number of turns in current game
-best score denotes lowest number of turns in a game during current session
+-	turns counter logs number of turns in current game
+-	best score denotes lowest number of turns in a game during current session
 Gold
-allow user to select difficulty level	-easy, hard, expert
-let user select number of cards for game
-successfully solving all matches reveals picture / saying, etc. on background image
+-	allow user to select difficulty level	-easy, hard, expert
+-	let user select number of cards for game
+-	successfully solving all matches reveals picture / saying, etc. on background image
 
 	
 
